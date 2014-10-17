@@ -10,9 +10,9 @@ echo "TMUX_CONF=$TMUX_CONF"
 
 s=$(tmux new -dP);
 
-for i in $LOGS_DIR/*; do
-  echo "Found log file -> $i"
-  tmux neww -n $(basename $i) -d "tail -f $(readlink -f $i)";
+for i in ${@:3}; do
+  echo "Found log file -> "$LOGS_DIR"/$i"
+  tmux neww -n $(basename $i) -d "tail -f $(readlink -f "$LOGS_DIR"/$i)";
 done
 
 tmux killw -t "$s"0
