@@ -1,0 +1,4 @@
+dir1/log1.txt
+dir2/log3.txt
+dir3/log5.txt
+dir4/log7.txt
